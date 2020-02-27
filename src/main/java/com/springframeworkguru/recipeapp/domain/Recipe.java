@@ -50,7 +50,15 @@ public class Recipe {
     }
 
     public void setNote(Notes note) {
+
         this.note = note;
+        note.setRecipe(this);
+    }
+
+    public Recipe addIngredient(Ingredient ingredient){
+        ingredient.setRecipe(this);
+        this.getIngredients().add(ingredient);
+        return this;
     }
 
     public String getDescription() {

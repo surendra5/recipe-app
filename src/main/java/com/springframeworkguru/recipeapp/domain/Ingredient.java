@@ -19,10 +19,9 @@ public class Ingredient {
     @OneToOne
     private MeasurementUnit measurementUnit;
 
-    public Ingredient(String description, BigDecimal amount, MeasurementUnit measurementUnit, Recipe recipe) {
+    public Ingredient(String description, BigDecimal amount, MeasurementUnit measurementUnit) {
         this.description = description;
         this.amount = amount;
-        this.recipe = recipe;
         this.measurementUnit = measurementUnit;
     }
 
