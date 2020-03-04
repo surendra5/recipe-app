@@ -1,5 +1,6 @@
 package com.springframeworkguru.recipeapp.controller;
-
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import com.springframeworkguru.recipeapp.domain.Recipe;
 import com.springframeworkguru.recipeapp.repositories.RecipeRepository;
 import com.springframeworkguru.recipeapp.service.RecipeService;
@@ -38,11 +39,11 @@ class IndexControllerTest {
         indexController = new IndexController(recipeService);
     }
 
-//    @Test
-//    void MockTest() throws Exception{
-//        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(indexController).build();
-//        mockMvc.perform(get("/")).andExpect(status.isOk()).andExpect(view().name("index"));
-//    }
+    @Test
+    void MockTest() throws Exception{
+        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(indexController).build();
+        mockMvc.perform(get("/")).andExpect(status().isOk()).andExpect(view().name("index"));
+    }
 
     @Test
     void indexControllerMethod() throws Exception{
